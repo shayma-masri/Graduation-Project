@@ -1,0 +1,179 @@
+.calories-page {
+  margin-left: 220px;
+  padding: 2rem;
+  background-color: #f8f6ed;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+
+  /* التوسيط كله */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calories-page h2 {
+  color: #6e9d7c;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  align-self: flex-start; /* عشات تخلي العنوان يبدا من اليسار داخل التوسيط */
+  max-width: 500px; /* نفس عرض النموذج */
+}
+
+.calories-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.calories-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  gap: 0.3rem;
+}
+
+.calories-form input,
+.calories-form select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.calories-form input:focus,
+.calories-form select:focus {
+  border-color: #6e9d7c;
+  box-shadow: 0 0 0 3px rgba(110, 157, 124, 0.2);
+  outline: none;
+}
+
+.calories-form button {
+  background-color: #6e9d7c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  align-self: flex-start;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.calories-form button:hover {
+  background-color: #5c866c;
+  transform: scale(1.03);
+}
+
+.calories-form button:active {
+  transform: scale(0.98);
+}
+
+.signup-message {
+  background-color: #fff5e5;
+  border: 1px solid #f0cf8e;
+  border-left: 6px solid #f0cf8e;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem; /* بدل margin-bottom */
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeIn 0.6s ease-in-out;
+  max-width: 500px;
+  width: 100%;
+}
+
+.signup-message span {
+  color: #9a7b2f;
+}
+
+.signup-message button {
+  background-color: #6e9d7c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.signup-message button:hover {
+  background-color: #5a876a;
+  transform: translateY(-2px);
+}
+.buttonCal{
+  background-color: #72a584;
+  align-items: center;
+  padding: 2px;
+  border-radius: 15px;
+  color: #f8f8f6;
+  text-align: center;
+
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.alert-box {
+  background: linear-gradient(135deg, #ffe5e0, #ffdad2); 
+  border-left: 6px solid #d9534f; 
+  color: #721c24;
+  padding: 20px 14px;
+  margin: 20px auto;
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.alert-box:hover {
+  transform: translateY(-2px);
+}
+
+.alert-box p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.alert-box button {
+  position: absolute;
+  top: 1px;
+  right: 12px;
+  background-color: transparent;
+  border: none;
+  color: #d9534f;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.alert-box button:hover {
+  color: #f4f2f2;
+}
