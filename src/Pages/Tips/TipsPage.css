@@ -1,0 +1,81 @@
+.tip-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f6ed;
+  color: #407651;
+}
+
+.tip-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #ccc;
+  display: inline-block;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.tip-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #407651;
+}
+
+.category {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tip-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.btn-wrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.refresh-btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #407651;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background-color: #305a3e;
+}
+
+.refresh-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.fade-in {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

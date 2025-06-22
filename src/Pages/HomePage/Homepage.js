@@ -17,8 +17,9 @@ function HomePage() {
         <div className="overlay"></div>
      
         <div className="text-on-image">
-          <h1>Welcome to Recipe Finder!</h1>
-          <h3>Explore a world of recipes and their details!</h3>
+          <h1>Welcome to Snack Track</h1>
+          <h2>Your health, your rules</h2>
+          <h3>Smart calorie tracking, delicious recipes, and daily motivation — all in one place.</h3>
           <button id="sr_home" onClick={handleSearchClick}>
               <FaSearch />
                    start 
@@ -31,4 +32,3 @@ function HomePage() {
 }
 
 export default HomePage;
-//Calories

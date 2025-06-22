@@ -17,7 +17,6 @@
   color: #6e9d7c;
   font-size: 2rem;
   margin-bottom: 2rem;
-  align-self: flex-start; /* عشات تخلي العنوان يبدا من اليسار داخل التوسيط */
   max-width: 500px; /* نفس عرض النموذج */
 }
 
