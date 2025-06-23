@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Recipes.css";
 import RecipeCard from "../../Components/Recipe Card/RecipeCard";
@@ -15,8 +16,6 @@ const Recipes = () => {
   const [loading, setLoading] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [similarRecipes, setSimilarRecipes] = useState([]);
-  const modalRef = useRef(null);
-
   const [filters, setFilters] = useState({
     vegetarian: false,
     vegan: false,
@@ -24,12 +23,17 @@ const Recipes = () => {
     dairyFree: false,
     veryHealthy: false,
   });
-
   const [sortBy, setSortBy] = useState("");
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
+
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
   }, []);
 
   useEffect(() => {
@@ -92,13 +96,24 @@ const Recipes = () => {
   };
 
   const handleSimilarRecipeClick = async (recipeId) => {
-    await fetchRecipeDetails(recipeId, setSelectedRecipe, modalRef);
+    await fetchRecipeDetails(recipeId, setSelectedRecipe);
   };
 
   return (
     <div className="page-content">
-      <nav className="homepage-navbar">  </nav>
-    
+      {user && (
+        <div className="user-info" style={{ textAlign: "center", marginBottom: "20px" }}>
+          <h2 style={{ marginBottom: "8px", color: "#d4a017" }}>
+            Welcome, <span style={{ fontWeight: "bold" }}>{user.name}</span>!
+          </h2>
+          <p>
+            Your daily calorie need is: <strong style={{ color: user.calories ? "#407651" : "#d9534f" }}>{user.calories || "Not set kcal"}</strong>
+          </p>
+        </div>
+      )}
+
+      <nav className="homepage-navbar"> </nav>
+
       <FilterRecipe
         filters={filters}
         setFilters={setFilters}
@@ -121,7 +136,7 @@ const Recipes = () => {
                 key={recipe.id}
                 recipe={recipe}
                 onDetailsClick={() =>
-                  fetchRecipeDetails(recipe.id, setSelectedRecipe, modalRef)
+                  fetchRecipeDetails(recipe.id, setSelectedRecipe)
                 }
                 isFavorite={favorites.some((fav) => fav.id === recipe.id)}
                 onToggleFavorite={toggleFavorite}

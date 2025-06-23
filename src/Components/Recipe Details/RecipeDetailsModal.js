@@ -17,7 +17,7 @@ const RecipeDetailsModal = ({
       <button onClick={onClose}>
          <FontAwesomeIcon icon={faClose} />
       </button>
-
+  
       <h2>{recipe.title}</h2>
       <img src={recipe.image} alt={recipe.title} />
 
@@ -29,7 +29,7 @@ const RecipeDetailsModal = ({
       </ul>
 
       <h3>Instructions</h3>
-    //<p>{recipe.instructions}</p> 
+    <p>{recipe.instructions}</p> 
       <div className="inst" style={{ marginBottom: "3vh" }}>
         <div dangerouslySetInnerHTML={{ __html: recipe.instructions }} />
       </div>

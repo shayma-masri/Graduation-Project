@@ -36,7 +36,7 @@
   flex-direction: column;
   gap: 2px;
   justify-content: center;
-font-family: 'Tajawal', sans-serif;
+  font-family: 'Tajawal', sans-serif;
 }
 
 .sort-section select {
@@ -44,6 +44,7 @@ font-family: 'Tajawal', sans-serif;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
+  width: 200px;
 }
 
 /* Media Queries */
