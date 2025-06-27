@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { FaHeart, FaSearch, FaCalculator, FaKey, FaUserPlus, FaLightbulb, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+
+import {
+  FaHeart,
+  FaSearch,
+  FaCalculator,
+  FaKey,
+  FaUserPlus,
+  FaLightbulb,
+  FaSignOutAlt,
+  FaUserCircle,
+  FaChartLine 
+} from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import 'react-tooltip/dist/react-tooltip.css';
 import homeIcon from "../../Assets/homeIcon.PNG";
@@ -27,12 +38,16 @@ function Navbar1() {
   return (
     <div className="navbar-container">
       <div className="navbar-links">
-
         <img
           src={homeIcon}
           alt="Home"
           onClick={() => navigate("/HomePage")}
-          style={{ width: "130px", height: "100px", cursor: "pointer", marginRight: "16px" }}
+          style={{
+            width: "130px",
+            height: "100px",
+            cursor: "pointer",
+            marginRight: "16px"
+          }}
           title="Go to Homepage"
         />
 
@@ -52,9 +67,13 @@ function Navbar1() {
           <FaLightbulb style={{ marginRight: '8px', color: 'white' }} /> Tips
         </span>
 
-        {/* إذا كان المستخدم مسجل دخول */}
+        {/*  عناصر تظهر فقط إذا كان المستخدم مسجل دخول هاي */}
         {user ? (
           <>
+            <span onClick={() => navigate("/calorietracker")}>
+              <FaChartLine style={{ marginRight: '8px', color: 'white' }} /> Tracker
+            </span>
+
             <span>
               <FaUserCircle style={{ marginRight: '8px', color: 'white' }} />
               Hi, <span style={{ fontWeight: "bold" }}>{user.name}</span>
