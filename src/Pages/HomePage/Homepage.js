@@ -1,4 +1,4 @@
-import background from "../../Assets/back-recipe.jpg";
+//import background from "../../Assets/back-recipe.jpg";
 import "./Homepage.css";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa"; 
